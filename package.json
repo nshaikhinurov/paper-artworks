@@ -1,0 +1,58 @@
+{
+	"name": "paper-artworks",
+	"version": "0.1.0",
+	"description": "Paper.js-powered generative art",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development nodemon --config ./nodemon.json --exec babel-node ./src/index.js",
+		"webpack": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"snyk": true,
+	"lint-staged": {
+		"*.{js,json,jsx}": [
+			"prettier --write",
+			"git add "
+		]
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.2.3",
+		"@babel/core": "^7.4.3",
+		"@babel/node": "^7.2.2",
+		"@babel/preset-env": "^7.4.3",
+		"@babel/register": "^7.0.0",
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-eslint": "^10.0.1",
+		"babel-loader": "^8.0.5",
+		"cross-env": "^5.2.0",
+		"eslint": "^6.1.0",
+		"eslint-config-airbnb": "^17.1.1",
+		"eslint-config-prettier": "^6.0.0",
+		"eslint-import-resolver-webpack": "^0.11.0",
+		"eslint-plugin-import": "^2.18.2",
+		"husky": "^1.3.1",
+		"json-loader": "^0.5.7",
+		"lint-staged": "^8.1.3",
+		"nodemon": "^1.18.4",
+		"prettier": "^1.17.1",
+		"webpack": "^4.41.2",
+		"webpack-bundle-analyzer": "^3.4.1",
+		"webpack-cli": "^3.3.2",
+		"webpack-dev-middleware": "^3.6.1",
+		"webpack-dev-server": "^3.1.9",
+		"webpack-hot-client": "^4.1.1",
+		"webpack-hot-middleware": "^2.24.3",
+		"webpack-hot-server-middleware": "^0.6.0",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"dependencies": {
+		"@babel/polyfill": "^7.0.0",
+		"core-js": "^3.4.0",
+		"paper": "^0.12.4",
+		"ramda": "^0.26.1",
+		"ramda-adjunct": "^2.22.1"
+	}
+}
