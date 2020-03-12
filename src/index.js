@@ -15,4 +15,18 @@ path.moveTo(start)
 // in JavaScript. Instead, we need to call the add() function:
 path.lineTo(start.add([200, -50]))
 // Draw the view now:
-paper.view.draw()
+// paper.view.draw()
+
+const svgObject = paper.project.exportSVG()
+document.getElementById('mydiv').appendChild(svgObject)
+
+document.getElementById('download-to-svg').onclick = () => {
+	const fileName = 'custom.svg'
+	const url = `data:image/svg+xml;utf8,${encodeURIComponent(
+		paper.project.exportSVG({ asString: true })
+	)}`
+	const link = document.createElement('a')
+	link.download = fileName
+	link.href = url
+	link.click()
+}
