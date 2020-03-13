@@ -16,11 +16,6 @@ module.exports = {
 		'eslint-config-prettier',
 	],
 
-	plugins: [
-		//
-		'security',
-	],
-
 	// Для поддержки экспериментального синтаксиса используем парсер babel-eslint, конфигурация подтягивается из .babelrc
 	parser: 'babel-eslint',
 	parserOptions: {
